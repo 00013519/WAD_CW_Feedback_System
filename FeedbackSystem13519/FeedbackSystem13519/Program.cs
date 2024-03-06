@@ -1,5 +1,7 @@
 using FeedbackSystem13519.Data;
+using FeedbackSystem13519.Repositories;
 using Microsoft.EntityFrameworkCore;
+using FeedbackSystem13519.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FeedbackDBContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection")));
+builder.Services.AddScoped<IRepository<FeedbackItems>, FeedbackRepository>();
 
 var app = builder.Build();
 
