@@ -1,6 +1,6 @@
-#This application was developed for Web
+This application was developed for Web
 Application module, as coursework portfolio project @ WIUT by student ID: 00013519
-###Calculation for topic out of the list
+##Calculation for topic out of the list
 13519 % 20 = 19 Feedback System
 ## Prerequisites
 Before running the application, ensure you have the following installed:
