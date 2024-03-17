@@ -1,0 +1,21 @@
+<div class="flex mt-8 justify-center">
+    <mat-card class="shadow w-4/12">
+        <mat-card-content>
+            <div class="p-8">
+                <p class="text-gray-700" class="username">{{ detailsFeedback.username }}</p>
+                <div class="mt-4">
+                    <div class="product-name">Product: {{detailsFeedback.product.name}}</div>
+                </div>
+                <div class="mt-4">
+                    <span class="text-gray-600">Rating:</span>
+                    <div class="rating">
+                        <mat-icon *ngFor="let icon of getStarIcons(detailsFeedback.rating)">{{ icon }}</mat-icon>
+                    </div>
+                </div>
+                <div class="mt-4 text-gray-600">Review:</div>
+                <div class="text mt-2">&quot; {{ detailsFeedback.content }} &quot;</div>
+                <div class="datetime">{{ formatDatetime(detailsFeedback.createdAt) }}</div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

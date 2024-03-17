@@ -1,0 +1,47 @@
+<div class="p-8 mt-8 flex justify-center">
+    <form class="shadow border w-4/12 p-4">
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Username</mat-label>
+                <input matInput name="Username" type="text" [(ngModel)]="createFeedback.username">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Content</mat-label>
+                <input matInput name="content" type="text" [(ngModel)]="createFeedback.content">
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Rating</mat-label>
+                <mat-select [(ngModel)]="createFeedback.rating" name="Rating">
+                    @for(p of ["1", "2", "3", "4", "5"]; track p)
+                    {
+                    <mat-option [value]="p">{{p}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Choose Product</mat-label>
+                <mat-select [(ngModel)]="pID" name="Product">
+                    @for(p of prod; track p)
+                    {
+                    <mat-option [value]="p.id">{{p.name}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-center">
+            <button mat-raised-button color="primary" (click)="create()">Create</button>
+        </div>
+    </form>
+</div>
+

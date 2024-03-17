@@ -1,0 +1,33 @@
+<div class="review-list">
+   <table mat-table [dataSource]="items" class="mat-elevation-z8">
+     <ng-container matColumnDef="Review">
+       <td mat-cell *matCellDef="let item" class="review-box">
+         <div class="content">
+           <div class="info">
+            <div class="username">{{item.username}}</div>
+             <div class="product-name">Product: {{item.product.name}}</div>
+             <div class="rating">
+               <mat-icon *ngFor="let icon of getStarIcons(item.rating)" >{{ icon }}</mat-icon>
+             </div>             
+             <div class="text"> &quot; {{item.content}} &quot;</div>
+             <div class="datetime">{{ formatDatetime(item.createdAt) }}</div>
+
+            </div>
+           <div class="actions">
+            <button mat-icon-button color="primary" (click)="EditClicked(item.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="DetailsClicked(item.id)">
+              <mat-icon>info</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="DeleteClicked(item.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+         </div>
+       </td>
+     </ng-container>
+ 
+     <tr mat-row *matRowDef="let row; columns: ['Review'];"></tr>
+   </table>
+ </div>

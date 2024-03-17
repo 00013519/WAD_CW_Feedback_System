@@ -1,0 +1,48 @@
+/* Styles for the details page */
+.details-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mat-card {
+    width: 60%; /* Adjust the width as needed */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  
+  .product {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .rating {
+    margin-top: 10px;
+    color: gold;
+  }
+  
+  .text {
+    margin-top: 20px;
+    font-style: italic;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .datetime {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+  }
+  

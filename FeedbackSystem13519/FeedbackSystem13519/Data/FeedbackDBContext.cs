@@ -9,6 +9,8 @@ namespace FeedbackSystem13519.Data
         public FeedbackDBContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<FeedbackItems> FeedbackItems { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Product> Products { get; set; }
+
     }
 }

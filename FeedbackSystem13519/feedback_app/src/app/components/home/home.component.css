@@ -1,0 +1,82 @@
+.review-list {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mat-table {
+    width: 80%;
+  }
+  
+  .review-box {
+    margin: 15px 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .datetime{
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  
+  
+  .username {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .actions button {
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .actions button:hover {
+    background-color: #ddd;
+    border-radius: 50%;
+  }
+  
+  .info {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .rating {
+    margin-top: 10px;
+    color: gold;
+  }
+  
+  .text {
+    margin-top: 20px;
+    font-style: italic;
+    width: 60%;
+    border: 1px inset #ddd;
+    padding: 20px;
+    background-color: #e4f1f8;
+    border-radius: 5px;
+  }
+  
