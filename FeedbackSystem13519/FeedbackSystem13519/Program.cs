@@ -6,10 +6,8 @@ using Microsoft.Build.Execution;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FeedbackDBContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection")));
@@ -18,7 +16,7 @@ builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOrigin",
-        builder => builder.WithOrigins("http://localhost:4200") // Replace with your Angular app's origin
+        builder => builder.WithOrigins("http://localhost:4200") 
         .AllowAnyMethod()
         .AllowAnyHeader());
 });

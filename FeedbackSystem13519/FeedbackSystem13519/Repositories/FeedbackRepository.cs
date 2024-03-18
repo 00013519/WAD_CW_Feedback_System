@@ -12,14 +12,12 @@ namespace FeedbackSystem13519.Repositories
         {
             _dbContext = dbContext;
         }
-        // Add or create new entity
         public async Task AddAsync(Feedback entity)
         {
             await _dbContext.Feedbacks.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
         }
 
-        // Delete an entity
         public async Task DeleteAsync(int id)
         {
             var entity = await _dbContext.Feedbacks.FindAsync(id);
@@ -30,13 +28,10 @@ namespace FeedbackSystem13519.Repositories
             }
         }
 
-        // Retrieve all entity from the database
         public async Task<IEnumerable<Feedback>> GetAllAsync() => await _dbContext.Feedbacks.Include(f=>f.Product).ToArrayAsync();
 
-        // Retrieve an entity from database using only an id
         public async Task<Feedback> GetByIDAsync(int id) => await _dbContext.Feedbacks.Include(f => f.Product).FirstOrDefaultAsync(b=>b.Id == id);
             
-        // Update the entity
         public async Task UpdateAsync(Feedback entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;

@@ -49,7 +49,6 @@ namespace FeedbackSystem13519.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update(Feedback items)
         {
-            //if (id != items.Id) return BadRequest();
             await _feedbackRepository.UpdateAsync(items);
 
             return NoContent();

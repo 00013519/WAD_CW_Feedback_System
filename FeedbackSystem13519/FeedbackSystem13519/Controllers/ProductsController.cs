@@ -23,28 +23,12 @@ namespace FeedbackSystem13519.Controllers
         }
 
 
-
-
-
-
-
-
-
-        // GET: api/<CategoryController>
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {
             return await _repository.GetAllAsync();
         }
 
-
-
-
-
-
-
-
-        // GET api/<CategoryController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByID(int id)
         {
@@ -60,12 +44,6 @@ namespace FeedbackSystem13519.Controllers
         }
 
 
-
-
-
-
-
-        // POST api/<CategoryController>
         [HttpPost]
         public async Task<IActionResult> Create(Product products)
         {
@@ -74,26 +52,14 @@ namespace FeedbackSystem13519.Controllers
         }
 
 
-
-
-
-
-
-        // PUT api/<CategoryController>/5
         [HttpPut]
         public async Task<IActionResult> Update(Product products)
         {
-            //if(id!=items.ID) return BadRequest();
             await _repository.UpdateAsync(products);
             return NoContent();
         }
 
 
-
-
-
-
-        // DELETE api/<CategoryController>/5
         [HttpDelete("{id}")]
 
         public async Task<IActionResult> Delete(int id)

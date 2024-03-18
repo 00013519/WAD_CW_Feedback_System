@@ -12,14 +12,12 @@ namespace FeedbackSystem13519.Repositories
         {
             _dbContext = dbContext;
         }
-        // Add or create new entity
         public async Task AddAsync(Product product)
         {
             await _dbContext.Products.AddAsync(product);
             await _dbContext.SaveChangesAsync();
         }
 
-        // Delete an entity
         public async Task DeleteAsync(int id)
         {
             var entity = await _dbContext.Products.FindAsync(id);
@@ -30,13 +28,10 @@ namespace FeedbackSystem13519.Repositories
             }
         }
 
-        // Retrieve all entity from the database
         public async Task<IEnumerable<Product>> GetAllAsync() => await _dbContext.Products.ToArrayAsync();
 
-        // Retrieve an entity from database using only an id
         public async Task<Product> GetByIDAsync(int id) => await _dbContext.Products.FirstOrDefaultAsync(b => b.Id == id);
 
-        // Update the entity
         public async Task UpdateAsync(Product entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
